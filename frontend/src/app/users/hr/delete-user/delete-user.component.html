@@ -1,0 +1,17 @@
+<div class="background">
+    <img src="../../assets/createUserBackground.svg" style="filter: grayscale(100%);" id="backgroundSVG">
+</div>
+
+<div class="firing-container">
+    <form [formGroup]="deleteForm" (ngSubmit)="onDelete()">
+        <p>TERMINATE EMPLOYEE</p>
+        
+        <label for="ssn">SSN:</label>
+        <input type="text" formControlName="ssn" placeholder="Enter SSN" required>
+
+        <label for="userID">User ID:</label>
+        <input type="text" formControlName="userID" placeholder="Enter User ID" required>
+
+        <button style="filter: grayscale(100%);" type="submit">Delete User</button>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<app-bg></app-bg>
+<app-emp-navbar></app-emp-navbar>
+<div class="content-holder">
+    <div class="clock-container">
+        <div class="time-cont">{{currentTime}}</div>
+        <div class="day-container">{{currentDay}}</div>
+        <div class="date-container">{{currentDate}}</div>
+        <button class="punch" (click)="onSubmit()">Clock In/Out</button>
+    </div>
+</div>
+<div class="pop-up" ngClass="pop-up">
+    <div class="alert-modal" ngClass="pop-up-child">
+        <p class="alert-text">Time punch successful</p>
+        <table class="punch-table">
+            <tr>
+                <td class="field">punchID:</td>
+                <td class="return-field">{{punchID}}</td>
+            </tr>
+            <tr>
+                <td class="field">Employee ID:</td>
+                <td class="return-field">{{EmployeeID}}</td>
+            </tr>
+            <tr>
+                <td class="field">Date and Time:</td>
+                <td class="return-field">{{dateTime}}</td>
+            </tr>
+        </table>
+        <button class="accept" (click)="alertModalClose()">Okay</button>
+    </div>
+</div>

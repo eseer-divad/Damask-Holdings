@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="dashboard">
+    <div class="welcome">
+        <h1>Welcome, {{userInfo.firstname }}!</h1>
+    </div>
+    <div class="items">
+        <p>User ID: {{ userInfo.userID }}</p>
+        <p>Is Admin: {{ userInfo.isAdmin }}</p>
+        <p>First Name: {{ userInfo.firstname }}</p>
+        <p>Middle Name: {{ userInfo.middlename }}</p>
+        <p>Last Name: {{ userInfo.lastname }}</p>
+        <p>Date of Birth: {{ userInfo.dob }}</p>
+        <p>Routing Number: {{ userInfo.routingnum }}</p>
+        <p>Account Number: {{ userInfo.accountnum }}</p>
+        <p>Street Address: {{ userInfo.streetaddress }}</p>
+        <p>State: {{ userInfo.state }}</p>
+        <p>Zip Code: {{ userInfo.zipcode }}</p>
+        <p>Token: {{ userInfo.token }}</p>
+    </div>
+
+</div>
+<app-emp-navbar></app-emp-navbar> 

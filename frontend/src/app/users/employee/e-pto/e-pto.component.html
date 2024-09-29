@@ -1,0 +1,144 @@
+
+<head><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /></head>
+<app-bg></app-bg>
+<app-emp-navbar></app-emp-navbar>
+<div class="content-container">
+    <div class="content-header">
+        <div class="header-label">
+            Available PTO
+        </div>
+        <div class="pto-options-label">
+            PTO Options
+        </div>
+    </div>
+    <div class="pto-qty-container">
+        {{currPTO}}
+    </div>
+    <div class="pto-opt-container">
+        <button class="request-button" (click)="openModal1()">Submit a Request</button>
+        <button class="view-button" (click)="openModal2()">View Your Requests</button>
+        <button class="delete-button" (click)="openModal3()">Delete a request</button>
+    </div>
+</div>
+<app-popup-modal #modal1 modalId="modal1"> 
+    <div class="modal-header">PTO Request</div>
+    <div class="request-modal-content">
+        <label class="date-label">Request Date</label>
+        <div [formGroup]="ReqDate">
+            <input type="date" class="date-input" value="2023-10-28" formControlName="date">
+        </div>
+            <button class="accept" (click)="PTOrequest()">Submit</button>
+    </div>
+</app-popup-modal>
+<app-popup-modal #modal2 modalId="modal2"> 
+    <div class="modal-header">Your Requests</div>
+    <div class="del-search-ops" #reqSearchOpts (mouseenter)="expandreqSearchOps()" (mouseleave)="minimizeReqSearchOps()">
+    <span><i class="material-symbols-outlined" id="s-icon">search</i>Search Options</span>
+        <div class="del-s-field-cont" #reqSearchFields>
+            <table class="s-fields">
+                <tr>
+                    <td class="input-type">Date:</td>
+                    <td class="input-field">
+                        <Select name="d-order" #sortDropDown>
+                            <option value="N">None</option>
+                            <option value="A">Ascending</option>
+                            <option value="D">Decending</option>
+                        </Select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input-type">Status:</td>
+                    <td class="input-field">
+                        <Select name="d-order" #statDropDown>
+                            <option value="None">None</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Approved">Approved</option>
+                            <option value="Denied">Denied</option>
+                        </Select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input-type">ID:</td>
+                    <td class="input-field">
+                        <input type="text" #reqIdInput>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="return-requests-container">
+        <div class="requests-return-element" *ngFor="let request of displayReqs">
+            <table class="pto-return-table">
+                <tr>
+                    <td class="PTO-field">Request ID:</td>
+                    <td class="return-PTO-field">{{ request.id }}</td>
+                </tr>
+                <tr>
+                    <td class="PTO-field">Date:</td>
+                    <td class="return-PTO-field">{{ request.date }}</td>
+                </tr>
+                <tr>
+                    <td class="PTO-field">Status:</td>
+                    <td class="return-PTO-field">{{ request.status }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</app-popup-modal>
+
+<app-popup-modal #modal3 modalId="modal3"> 
+    <div class="modal-header">Delete Request</div>
+    <div class="del-search-ops" #delSearchOpts (mouseenter)="expandDelSearchOps()" (mouseleave)="minimizeDelSearchOps()">
+        <span><i class="material-symbols-outlined" id="s-icon">search</i>Search Options</span>
+        <div class="del-s-field-cont" #delSearchFields>
+            <table class="s-fields">
+                <tr>
+                    <td class="input-type">Date:</td>
+                    <td class="input-field">
+                        <Select name="d-order" #dDropDown>
+                            <option value="N">None</option>
+                            <option value="A">Ascending</option>
+                            <option value="D">Decending</option>
+                        </Select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input-type">ID:</td>
+                    <td class="input-field">
+                        <input type="text" #idInput>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="delete-container">
+        <div class="delete-args" *ngFor="let del_arg of deleteDisplayReqs; let i = index">
+            <table class="del-table">
+                <tr>
+                    <td class="del-field">Request ID:</td>
+                    <td class="del-return-field">{{del_arg.id}}</td>
+                </tr>
+                <tr>
+                    <td class="del-field">Date:</td>
+                    <td class="del-return-field">{{del_arg.date}}</td>
+                </tr>
+            </table>
+            <button class="del-req" (click)="deleteRequest(i)">Delete</button>
+        </div>
+    </div>
+</app-popup-modal>
+
+<app-popup-modal #modal4 modalId="modal4"> 
+    <div class="succ-header">Request Accepted</div>
+    <table class="punch-table">
+        <tr>
+            <td class="field">Request ID:</td>
+            <td class="return-field">{{reqid}}</td>
+        </tr>
+        <tr>
+            <td class="field">Status:</td>
+            <td class="return-field">Pending</td>
+        </tr>
+    </table>
+    <button class="okay" (click)="closeModal4()">Okay</button>
+</app-popup-modal>

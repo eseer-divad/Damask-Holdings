@@ -1,0 +1,97 @@
+:root{
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar{
+    width: 3rem;
+    height: 100vh;
+    position: fixed;
+    background-color: #393939;
+    left: 0;
+    top: 0;
+    transition: 300ms ease;
+    z-index: 10;
+    border-right: 6px solid #d3a76a;
+}
+
+.navbar-nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.nav-item{
+    width: 100%;
+    transition: 500ms ease;
+    padding-top: 20px;
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    text-decoration: none;
+}
+
+#icon{
+    font-size: 40px;
+    padding: 50px;
+}
+
+.link-text{
+    display: none;
+    font-size: 24px;
+    color: white
+}
+
+.nav-link svg{
+    min-width: 2rem;
+    max-width: 5rem;
+    margin: 0 0.5rem;
+}
+
+.navbar:hover{
+    width: 16rem;
+}
+
+.navbar:hover .link-text{
+    display: block;
+}
+
+.nav-item:hover{
+    background-color: #855858;
+}
+
+.nav-item:last-child{
+    margin-top: auto;
+}
+
+/* change logo colors */
+.nav-link svg path {
+    fill: white;
+}
+
+/* darken screen / overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+    pointer-events: none;
+  }
+  
+  /* Darken the overlay on hover */
+  .navbar:hover + .overlay {
+    background-color: rgba(0, 0, 0, 0.7); 
+    pointer-events: auto;
+  }
+  

@@ -1,0 +1,219 @@
+@font-face {
+    font-family: Clock;
+    src: url(../../../../assets/8-digit-pin-font/8DigitPinRegular-d9WRV.ttf);
+}
+
+.content-holder{
+    background-color: transparent;
+    width: 90vw;
+    height: 100vh;
+    position: absolute;
+    margin-left: 7%;
+    top: 0%;
+    display: flex;
+    justify-content: center;
+}
+
+.clock-container {
+    background-color: #e1dfe0;
+    width: 80vw; 
+    height: 40vh; 
+    margin-top: 2%;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border: solid #118c4f; 
+    border-width: 10px 5px; 
+    display: flex; 
+
+    z-index: 0;
+}
+
+.time-cont{
+    font-family: clock;
+    background-color: #C2EBFF;
+    height: 100%;
+    width: 40%;
+    border-radius: 22px 10px 10px 22px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 4vw;
+    display: flex;
+    border-right:solid #118c4f 10px;
+    justify-content: center;
+    align-items: center;
+}
+.day-container{
+    background-color: transparent;
+    position: fixed;
+    width: 47.8%;
+    height: 12%;
+    right: 7.4%;
+    border-radius: 10px 22px 0px 0px;
+    border-bottom: solid #118c4f 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vw;
+}
+.date-container{
+    background-color: transparent;
+    position:fixed;
+    width: 47.5%;
+    height: 12%;
+    right: 7.8%;
+    top: 18%;
+    border-bottom: solid #118c4f 5px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vw;
+}
+
+.punch {
+    position: fixed;
+    right: 21%;
+    top: 33%;
+    height: 10%;
+    width: 20%;
+    background-color: #118c4f;
+    color: #C2EBFF; 
+    border: none; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer; 
+    font-size: 1em; 
+    padding: 10px 20px; 
+    transition: all 0.3s ease;
+    z-index: 5;
+  }
+  
+  .punch:hover {
+    color: black;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+    background-color: #60b892;
+    transform: scale(1.05);
+  }
+  
+.pop-up{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 15;
+    top:0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms ease;
+}
+
+.alert-modal{
+    width: 50%;
+    height: 50%;
+    background-color: #e1dfe0;
+    border-radius: 10px;
+    border: solid #118c4f 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 2vw;
+    text-align: center;
+    transition: 300ms ease;
+}
+.alert-text{
+    margin-top: 2%;
+    width: 100%;
+}
+
+.punch-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.1vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .punch-table th,
+  .punch-table td {
+    padding: 12px 15px;
+  }
+  
+  .punch-table tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .punch-table tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .punch-table tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  
+  .field {
+    font-weight: 600;
+    color: #009879;
+    text-align: left;
+  }
+  
+  .return-field {
+    text-align: right;
+  }
+  
+  /* Add responsiveness to the table */
+  @media screen and (max-width: 600px) {
+    .punch-table thead {
+      display: none;
+    }
+  
+    .punch-table,
+    .punch-table tbody,
+    .punch-table tr,
+    .punch-table td {
+      display: block;
+      width: 100%;
+    }
+  
+    .punch-table tr {
+      margin-bottom: 15px;
+    }
+  
+    .punch-table td {
+      text-align: right;
+      padding-left: 50%;
+      text-align: right;
+      position: relative;
+    }
+  
+    .punch-table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 15px;
+      font-weight: 600;
+      text-align: left;
+    }
+  }
+  
+.accept {
+    height: 20%;
+    width: 30%;
+    background-color: #118c4f;
+    color: #C2EBFF; 
+    border: none; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer; 
+    font-size: 1em; 
+    padding: 10px 20px; 
+    transition: all 0.3s ease;
+    z-index: 5;
+  }
+  
+  .accept:hover {
+    color: black;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: #60b892;
+    transform: scale(1.05);
+  }

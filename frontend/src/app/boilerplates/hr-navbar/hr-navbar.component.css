@@ -1,0 +1,69 @@
+:root{
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar{
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: #6184D8;
+    left: 0;
+    top: 0;
+    transition: 300ms ease;
+}
+
+.navbar-nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.nav-item{
+    width: 100%;
+    transition: 500ms ease;
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    text-decoration: none;
+}
+
+#icon{
+    font-size: 50px;
+}
+
+.link-text{
+    display: none;
+    font-size: 24px;
+    color: black
+}
+
+.nav-link svg{
+    min-width: 2rem;
+    max-width: 5rem;
+    margin: 0 0.5rem;
+}
+
+.navbar:hover{
+    width: 16rem;
+}
+
+.navbar:hover .link-text{
+    display: block;
+}
+
+.nav-item:hover{
+    background-color: #96DED1;
+}
+
+.nav-item:last-child{
+    margin-top: auto;
+}

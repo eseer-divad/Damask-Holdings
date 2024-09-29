@@ -1,0 +1,156 @@
+.punch-container{
+    position: absolute;
+    margin-left: 11.7rem;
+    background-color: #cec9cb;
+    width: 80%;
+    height: 95vh;
+    border-radius: 20px;
+    border: solid #118c4f 10px;
+}
+
+.header{
+    position: absolute;
+    left:-.5%;
+    top: -1.2%;
+    width: 30%;
+    height: 10vh;
+    background-image: linear-gradient(90deg, #118c4f, #21ea86, #118c4f);
+    border-radius: 20px 0px 10px 0px;
+    text-align: center;
+    font-size: 4vw;
+}
+
+.content-container{
+    background-color: transparent;
+    width: 100%;
+    height: 89%;
+    margin-top: 6%;
+    border-radius: 0px 0px 20px 10px;
+    overflow-y: scroll;
+}
+.content-container::-webkit-scrollbar{
+    background-color: #084f09;
+    width: 10px;
+    border-radius: 20px;
+}
+.content-container::-webkit-scrollbar-thumb{
+    background-color: #3e9c35;
+    border-radius: 20px;
+}
+
+.punch-returns {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 2vw;
+    font-weight: 900;
+}
+
+.punch-returns th, .punch-returns td {
+    padding: 12px 15px;
+}
+
+.punch-head {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.return-elem:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.return-elem:nth-child(odd) {
+    background-color: #b4f6b6;
+}
+
+.return-elem:hover {
+    background-color: #ddd;
+}
+
+.search-bar{
+    position: absolute;
+    background-image: linear-gradient(90deg, #11848c, #21ea86, #11848c);
+    height: 10%;
+    width: 40%;
+    left: 45%;
+    top: -10px;
+    border-radius: 0px 0px 20px 20px;
+    transition: 700ms ease;
+}
+
+.text-cont{
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+    text-align: center;
+    font-size: 4vw;
+}
+
+#icon{
+    font-size: 4vw;
+}
+
+#icon:last-child{
+    font-weight: 5vw;
+}
+
+.search-fields{
+    margin-top: 1%;
+    width: 100%;
+    height: 82%;
+    border-radius: 0px 0px 20px 20px;
+    background-color: transparent;
+    display: none;
+}
+
+.fields{
+    width: 100%;
+    height: 12%;
+    font-size: 2vw;
+}
+
+.fields:nth-of-type(even){
+    background-color: rgb(33, 211, 224);
+}
+.fields:nth-of-type(odd){
+    background-color: #21ea86;
+}
+
+.year-selector{
+    width: 30%;
+    height: 100px;
+    font-size: 2vw;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    max-height: 50px;
+}
+.month-selector{
+    width: 30%;
+    height: 50px;
+    font-size: 2vw;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.weekday-selector{
+    width: 40%;
+    height: 100px;
+    font-size: 2vw;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    max-height: 50px;
+}
+
+#icon-2{
+    font-size: 2vw;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.punch-id-input{
+    width: 60%;
+    height: 100px;
+    font-size: 2vw;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    max-height: 50px;
+}

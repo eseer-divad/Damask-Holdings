@@ -1,0 +1,10 @@
+<div class="overlay" *ngIf="isVisible">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="exit-container" (click)="closePopup()"><span class="material-symbols-outlined" id="exit">close</span></div>
+
+      </div>
+      <ng-content></ng-content>
+    </div>
+  </div>
+  

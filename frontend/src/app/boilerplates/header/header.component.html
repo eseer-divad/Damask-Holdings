@@ -1,0 +1,18 @@
+<!-- header.component.html -->
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+</head>
+
+<div class="header-container">
+    <div class="title-bar">
+      <!-- TODO: insert logo -->
+      <h2 class="title-text">Damask</h2>
+      <!-- Insert Material Icons "?" icon -->
+      <span class="material-icons" style="cursor: pointer; padding-right: 10px; margin-top: 16px; margin-right: 25px; margin-left: auto;" (click)="openHelpModal()">help</span>
+    </div>
+    <div class="random-image">
+      <!-- Display a random image from the assets folder -->
+      <img [src]="getRandomImage()" alt="Random hd-image">
+    </div>
+</div>

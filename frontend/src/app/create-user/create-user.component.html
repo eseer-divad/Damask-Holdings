@@ -1,0 +1,33 @@
+<div class="background">
+    <img src="../../assets/createUserBackground.svg" id="backgroundSVG">
+</div>
+
+<div class="login-container">
+    <h1 style="text-decoration: underline;">Damask Holdings</h1>
+    <form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+    
+        <p>Personal Information:</p>
+        <input type="text" formControlName="firstname" placeholder="First Name">
+        <input type="text" formControlName="middlename" placeholder="Middle Name">
+        <input type="text" formControlName="lastname" placeholder="Last Name">
+    
+        <p>Very Personal Information:</p>
+        <input type="text" formControlName="ssn" placeholder="Social Security Number (SSN)">
+        <br>
+        <input type="date" formControlName="dob" placeholder="Date of Birth">
+        <br>
+        <input type="text" formControlName="streetaddress" placeholder="Street Address">
+        <input type="text" formControlName="state" placeholder="State">
+        <input type="text" formControlName="zipcode" placeholder="Zipcode">
+        
+        <p>Banking Information:</p>
+        <input type="text" formControlName="routingnum" placeholder="Routing Number">
+        <input type="text" formControlName="accountnum" placeholder="Account Number">
+        
+        <div> 
+            <p><input type="checkbox" id="isAdmin" name="isadmin" formControlName="isAdmin">Are you an admin?</p>
+        </div>
+        <button class="button" type="submit">Create Account</button>
+    </form>
+  </div>
+  

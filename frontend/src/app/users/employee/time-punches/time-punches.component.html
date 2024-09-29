@@ -1,0 +1,99 @@
+<head><link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"></head>
+<app-bg></app-bg>
+<app-emp-navbar></app-emp-navbar>
+<div class="punch-container">
+    <div class="header">Punch History
+    </div>
+    <div class="search-bar" #search_bar (mouseenter)="expandSearchBar()" (mouseleave)="collapseSearchBar()">
+        <div class="text-cont">
+           <span id="text-cont">Search</span><span class="material-icons" id="icon">manage_search</span>
+        </div>
+        <div class="search-fields" #searchFields>
+            <table class="fields">
+                <tr class="fields">
+                    <td>Date</td>
+                    <td><select name="year" class="year-selector" #yearSelector>
+                            <option value="none">Year</option>
+                            <option value="none">none</option>
+                            <ng-container *ngFor="let year of yearList">
+                                <option [value]="year">{{year}}</option>
+                            </ng-container>
+                        </select>
+                        <select name="month" class="month-selector" #monthSelector>
+                            <option value="none">Month</option>
+                            <ng-container *ngFor="let month of monthList">
+                                <option [value]="month">{{month}}</option>
+                            </ng-container>
+                        </select>
+                        <select name="day" class="month-selector" #daySelector>
+                            <option value="none">Day</option>
+                            <ng-container *ngFor="let day of dayList">
+                                <option [value]="day">{{day}}</option>
+                            </ng-container>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="fields">
+                    <td>Weekday:</td>
+                    <td>
+                        <select name="Weekday" class="weekday-selector" #weekdaySelector>
+                            <option value="none">Weekday</option>
+                            <ng-container *ngFor="let day of WeekdayList">
+                                <option [value]="day">{{day}}</option>
+                            </ng-container>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="fields">
+                    <td>Time Window:</td>
+                    <td>
+                        <select name="Time-1" class="weekday-selector" #timeOneSelector>
+                            <option value="none">Time</option>
+                            <ng-container *ngFor="let time of TimeList">
+                                <option [value]="time">{{time}}</option>
+                            </ng-container>
+                        </select>
+                        <span class="material-icons" id="icon-2">arrow_forward</span>
+                        <select name="Time-2" class="weekday-selector" #timeTwoSelector>
+                            <option value="none">Time</option>
+                            <ng-container *ngFor="let time of TimeList">
+                                <option [value]="time">{{time}}</option>
+                            </ng-container>
+                        </select> 
+                    </td>
+                </tr>
+                <tr class="fields">
+                    <td>Punch ID:</td>
+                    <td>
+                        <input type="text" class="punch-id-input" value="Punch ID" #punchIdInput>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="content-container">
+        <table class="punch-returns">
+            <tr class="punch-head">
+                <th class="head-elem">
+                    PunchID
+                </th>
+                <th class="head-elem">
+                    Date
+                </th>
+                <th class="head-elem">
+                    Day
+                </th>
+                <th class="head-elem">
+                    Time
+                </th>
+            </tr>
+            <tr class="return-elem" *ngFor="let punch of displayPunches">
+                <td>{{punch.id}}</td>
+                <td>{{punch.p_date}}</td>
+                <td>{{punch.day}}</td>
+                <td>{{punch.p_time}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
